@@ -78,6 +78,9 @@
       <li class="nav-item">
         <a class="nav-link" data-toggle="pill" href="#projetosAtribuidos">Adicionar um novo</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#medalhas">Medalhas</a>
+      </li>
     </ul>
   </div>
   <div class="tab-content">
@@ -97,7 +100,6 @@
       </table>
     </div>
 
-
     <div id="projetosAtribuidos" class="container tab-pane fade"><br>
       <div id="input_project">
         <label for="codigo-projeto"></label>
@@ -110,6 +112,22 @@
         </div>
         <button id="botao-add">Adicionar</button>
       </div>
+    </div>
+
+    <div id="medalhas" class="container tab-pane active2"><br></br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"><a onclick="alert('Ola')">Materia</a></th>
+            <th scope="col">ID Professor</th>
+            <th scope="col">ID Aluno</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody id="tpjr2">
+
+        </tbody>
+      </table>
     </div>
   </div>
 
@@ -148,6 +166,7 @@
 
     </form>
   </div>
+
 
 <div id="login" class="modal">
 

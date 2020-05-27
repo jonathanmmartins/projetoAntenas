@@ -12,7 +12,7 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoDatabase;	
 import com.mongodb.client.model.FindOneAndUpdateOptions;
 
 public class ModelAluno {
@@ -29,7 +29,7 @@ public class ModelAluno {
 		// System.out.println(foundJson);
 		return foundJson;
 	}
-
+	
 	public String buscaPorDono(String emailAluno) {
 
 		MongoCollection<Document> projects = db.getCollection("projeto");

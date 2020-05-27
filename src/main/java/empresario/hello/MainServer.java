@@ -3,6 +3,7 @@
 import static spark.Spark.*;
 import org.bson.Document;
 import cadi.hello.ModelCadi;
+import medalha.hello.ModelMedalha;
 import professor.hello.ControllerProfessor;
 import professor.hello.ModelProfessor;
 import cadi.hello.ControllerCadi;
@@ -12,9 +13,10 @@ public class MainServer {
 	final static Model model = new Model();
 	final static ModelCadi modelCadi = new ModelCadi();
 	final static ModelProfessor modelProf = new ModelProfessor();
-	final static ModelAluno modelAluno = new ModelAluno(); 
+	final static ModelAluno modelAluno = new ModelAluno();
+	final static ModelMedalha modelMedal = new ModelMedalha();
 	
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
 		// Get port config of heroku on environment variable
         ProcessBuilder process = new ProcessBuilder();
@@ -33,11 +35,20 @@ public class MainServer {
         initializeControllerCadi();
         //initializeModelCadi();
         initializeControllerProfessor();
-        //initializeModelProfessor();
+        initializeModelProfessor();
         initializeControllerAluno();
         modelAluno.addAluno(Document.parse("{'name':'Leticia', 'email':'leticia.carvalho11@fatec.sp.gov.br','senha':'123', 'ativo':true}"));
-    }
+        initializeModelMedalha();
+	}
     
+	public static void initializeModelMedalha() {
+        modelMedal.addMedalha(Document.parse("{'nameMedal':'Python', 'id_aluno':'5e698a3fc9a6673f160bc300','id_professor':'5e698c51a90bba418ec9d9fc'}"));
+        modelMedal.addMedalha(Document.parse("{'nameMedal':'Java', 'id_aluno':'5e698a3fc9a6673f160bc300','id_professor':'5e698c51a90bba418ec9d9fc'}"));
+        //modelMedal.addMedalha(Document.parse("{'nameMedal':'Python', 'id_aluno':'5e698a3fc9a6673f160bc300','id_professor':'5e698c51a90bba418ec9d9fc'}"));
+        //modelMedal.addMedalha(Document.parse("{'nameMedal':'Python', 'id_aluno':'5e698a3fc9a6673f160bc300','id_professor':'5e698c51a90bba418ec9d9fc'}"));
+
+	}
+	
     public static void initializeControllerEmpresario() {
     	REST controller = new REST(model); 
 		controller.cadastroEmpresario();

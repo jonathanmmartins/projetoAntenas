@@ -6,6 +6,7 @@ $(document).ready(function () {
 	let tela = document.querySelector('#tabela-projetos');
 	let telaemail = document.getElementById('bodyemail');
 	let rota = "/projetos"
+	let rota_medalhas = "/medalhas"
 	let retorno = {}
 
 	$.get(rota, function (projetosBE, err) {
@@ -27,6 +28,25 @@ $(document).ready(function () {
 						+ "<th>" + projects[index].titulo + "</th>" + "<th>"
 						+ projects[index].fase + "</th>"
 						+ `<th><button onclick="abrePopupEntregar(event,chave='${projects[index].chave}')">Entregar</button></th>`
+						+ "</tr>";
+				HTMLTemporario = HTMLTemporario + HTMLNovo;
+				$tela.innerHTML = HTMLTemporario;
+			});
+		}
+	});
+
+	$.get(rota_medalhas, function (projetosBE, err) {
+		
+		let projects = JSON.parse(projetosBE);
+		let wichParticipate = [];
+		if (wichParticipate) {
+			wichParticipate.map((index) => {
+				console.log(index);
+				var $tela = document.querySelector('#tpjr2'),
+					HTMLTemporario = $tela.innerHTML,
+					HTMLNovo = "<tr> <th>" + projects[index].nameMedal + "</th>" + "<th>"
+						+ projects[index].id_aluno + "</th>"
+						+ projects[index].id_professor+ "</th>"
 						+ "</tr>";
 				HTMLTemporario = HTMLTemporario + HTMLNovo;
 				$tela.innerHTML = HTMLTemporario;
