@@ -1,5 +1,8 @@
 package medalha.hello;
 
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
 import org.bson.Document;
 
 import com.mongodb.MongoClient;
@@ -18,8 +21,8 @@ public class ModelMedalha {
 	
 	public FindIterable<Document> listaMedalhas() {
 		
-		MongoCollection<Document> medalhas = db.getCollection("medalhas");
-		FindIterable<Document> found = medalhas.find();
+		MongoCollection<Document> medal = db.getCollection("medalhas");
+		FindIterable<Document> found = medal.find();
 		return found;
 	}
 }

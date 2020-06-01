@@ -145,7 +145,7 @@ public class ModelAluno {
 		projeto.put("fase", 6);
 		projeto.put("descricao-breve", desc);
 		projeto.put("link-externo-1", link);
-		System.out.println(projeto);
+		//System.out.println(projeto);
 		projetos.replaceOne(searchQuery, found);
 		return found;
 	}

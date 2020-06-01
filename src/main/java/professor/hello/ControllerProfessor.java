@@ -130,6 +130,7 @@ public class ControllerProfessor {
 			}
 		});
 	}
+	
 	public void updateProjetoProfessor() {
 		post("/updateProjetoProfessor", (Request request, Response response) -> {
 			response.header("Access-Control-Allow-Origin", "*");
@@ -138,6 +139,7 @@ public class ControllerProfessor {
 			return request.body();
 		});
 	}
+	
 	public void inserirProfessor() {
 
 		post("/professorcadastro", new Route() {
@@ -175,6 +177,7 @@ public class ControllerProfessor {
 			return json;
 		});
 	}
+	
 	public void searchprofessor() {
 		post("/professorLogado", (request, response) -> {
 			JSONObject json = new JSONObject(request.body());

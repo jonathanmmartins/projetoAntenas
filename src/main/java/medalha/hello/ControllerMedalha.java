@@ -28,6 +28,8 @@ public class ControllerMedalha {
 			public Object handle(final Request request, final Response response) {
 
 				FindIterable<Document> medalFound = model.listaMedalhas();
+				
+				//System.out.println(medalFound);
 
 				return StreamSupport.stream(medalFound.spliterator(), false).map(Document::toJson)
 						.collect(Collectors.joining(", ", "[", "]"));

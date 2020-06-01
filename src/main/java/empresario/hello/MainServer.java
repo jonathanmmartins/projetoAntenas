@@ -35,16 +35,17 @@ public class MainServer {
         initializeControllerCadi();
         //initializeModelCadi();
         initializeControllerProfessor();
-        initializeModelProfessor();
+        //initializeModelProfessor();
         initializeControllerAluno();
-        modelAluno.addAluno(Document.parse("{'name':'Leticia', 'email':'leticia.carvalho11@fatec.sp.gov.br','senha':'123', 'ativo':true}"));
-        initializeModelMedalha();
+        //modelAluno.addAluno(Document.parse("{'name':'Leticia', 'email':'leticia.carvalho11@fatec.sp.gov.br','senha':'123', 'ativo':true}"));
+        //initializeModelMedalha();
+        modelMedal.addMedalha(Document.parse("{'nameMedal':'Eclipse', 'email_aluno':'leticia.carvalho11@fatec.sp.gov.br','email_professor':'Giuliano@fatec.sp.gov.br'}"));
 	}
     
 	public static void initializeModelMedalha() {
-        modelMedal.addMedalha(Document.parse("{'nameMedal':'Python', 'id_aluno':'5e698a3fc9a6673f160bc300','id_professor':'5e698c51a90bba418ec9d9fc'}"));
-        modelMedal.addMedalha(Document.parse("{'nameMedal':'Java', 'id_aluno':'5e698a3fc9a6673f160bc300','id_professor':'5e698c51a90bba418ec9d9fc'}"));
-        //modelMedal.addMedalha(Document.parse("{'nameMedal':'Python', 'id_aluno':'5e698a3fc9a6673f160bc300','id_professor':'5e698c51a90bba418ec9d9fc'}"));
+        //modelMedal.addMedalha(Document.parse("{'nameMedal':'Python', 'email_aluno':'leticia.carvalho11@fatec.sp.gov.br','email_professor':'Nanci@fatec.sp.gov.br'}"));
+        //modelMedal.addMedalha(Document.parse("{'nameMedal':'Java', 'email_aluno':'leticia.carvalho11@fatec.sp.gov.br','email_professor':'Nanci@fatec.sp.gov.br'}"));
+        //modelMedal.addMedalha(Document.parse("{'nameMedal':'C++', 'email_aluno':'leticia2.carvalho11@fatec.sp.gov.br','email_professor':'Nanci@fatec.sp.gov.br'}"));
         //modelMedal.addMedalha(Document.parse("{'nameMedal':'Python', 'id_aluno':'5e698a3fc9a6673f160bc300','id_professor':'5e698c51a90bba418ec9d9fc'}"));
 
 	}
@@ -54,6 +55,7 @@ public class MainServer {
 		controller.cadastroEmpresario();
         controller.cadastroProjeto();
         controller.getProjetos();
+        controller.getMedalhas();
         controller.getEmpresarios();
         controller.deletaProjeto();
         controller.atualizaProjeto();
@@ -118,9 +120,9 @@ public class MainServer {
 
     public static void initializeModelProfessor(){
     	//Professores
-    	modelProf.addProfessor(Document.parse("{'name':'Giuliano', 'email':'Giuliano@fatec.sp.gov.br','senha':'1234', 'ativo':true}"));
-    	modelProf.addProfessor(Document.parse("{'name':'Sakaue', 'email':'Sakaue@fatec.sp.gov.br','senha':'1234', 'ativo':true}"));
-    	modelProf.addProfessor(Document.parse("{'name':'Nanci', 'email':'Nanci@fatec.sp.gov.br','senha':'1234', 'ativo':true}"));
+    	//modelProf.addProfessor(Document.parse("{'name':'Giuliano', 'email':'Giuliano@fatec.sp.gov.br','senha':'1234', 'ativo':true}"));
+    	//modelProf.addProfessor(Document.parse("{'name':'Sakaue', 'email':'Sakaue@fatec.sp.gov.br','senha':'1234', 'ativo':true}"));
+    	//modelProf.addProfessor(Document.parse("{'name':'Nanci', 'email':'Nanci@fatec.sp.gov.br','senha':'1234', 'ativo':true}"));
     	
     }
     

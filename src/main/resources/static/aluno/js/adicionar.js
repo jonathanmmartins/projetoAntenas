@@ -15,6 +15,7 @@ $(document).ready(function () {
 		let wichParticipate = [];
 		for (i = 0; i < projects.length; i++) {
 			isParticipate = projects[i].alunos.find(aluno => aluno == email)
+			//alert(projects[i].alunos.email);
 			if (isParticipate) {
 				wichParticipate.push(i);
 			}
@@ -34,19 +35,24 @@ $(document).ready(function () {
 			});
 		}
 	});
+	
+	$.get(rota_medalhas, function (medalBE, err) {	
 
-	$.get(rota_medalhas, function (projetosBE, err) {
-		
-		let projects = JSON.parse(projetosBE);
+		let medal = JSON.parse(medalBE);
 		let wichParticipate = [];
+		for (i = 0; i < medal.length; i++) {
+			if (medal[i].email_aluno==email) {
+				wichParticipate.push(i);
+			}
+		}
 		if (wichParticipate) {
 			wichParticipate.map((index) => {
 				console.log(index);
 				var $tela = document.querySelector('#tpjr2'),
 					HTMLTemporario = $tela.innerHTML,
-					HTMLNovo = "<tr> <th>" + projects[index].nameMedal + "</th>" + "<th>"
-						+ projects[index].id_aluno + "</th>"
-						+ projects[index].id_professor+ "</th>"
+					HTMLNovo = "<tr> <th>" + medal[index].nameMedal + "</th>"
+						+ "<th>" + medal[index].email_professor + "</th>" + "<th>"
+						+ medal[index].email_aluno + "</th>"
 						+ "</tr>";
 				HTMLTemporario = HTMLTemporario + HTMLNovo;
 				$tela.innerHTML = HTMLTemporario;

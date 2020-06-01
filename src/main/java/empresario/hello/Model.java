@@ -53,7 +53,17 @@ public class Model{
 		FindIterable<Document> todos = projetos.find();
 
 		for(Document projeto: todos) {
-			System.out.println(projeto);
+			//System.out.println(projeto);
+		}
+		return todos;
+	}
+	
+	public FindIterable<Document> getAllMedalhas() {
+		MongoCollection<Document> medal = db.getCollection("medalhas");
+		FindIterable<Document> todos = medal.find();
+
+		for(Document medal1: todos) {
+			//System.out.println(medal1);
 		}
 		return todos;
 	}
@@ -63,7 +73,7 @@ public class Model{
 		FindIterable<Document> todos = empresarios.find();
 
 		for(Document empresario: todos) {
-			System.out.println(empresario);
+			//System.out.println(empresario);
 		}
 		return todos;
 	}

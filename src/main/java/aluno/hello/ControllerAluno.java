@@ -161,12 +161,15 @@ public class ControllerAluno {
 			}
 		});
 	}
-	public void projetos() {
+	
+public void projetos() {
 		get("/projetos", new Route() {
 			@Override
 			public Object handle(final Request request, final Response response) {
 
 				FindIterable<Document> projectsFound = model.listaProjetos();
+				
+				//System.out.println(projectsFound);
 
 				return StreamSupport.stream(projectsFound.spliterator(), false).map(Document::toJson)
 						.collect(Collectors.joining(", ", "[", "]"));
@@ -213,9 +216,9 @@ public class ControllerAluno {
 	
 	public void entregaProjeto() {
 		post("/entregar", (req, res) -> {
-			System.out.println("test");
+			//System.out.println("test");
 			Document project = Document.parse(req.body());
-			System.out.println(project);
+			//System.out.println(project);
 			String id = project.getString("id");
 			String alunos = project.getString("autores");
 			String descricao = project.getString("descricao");

@@ -22,23 +22,52 @@
         	</div>
       </div>
             <!--Janela de Meus Projetos-->
-            <div id="myProjects" class="container"><br>
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <td scope="col">Titulo</td>
-                            <td scope="col">Descricao</td>
-                            <td scope="col">Empresa</td>
-                            <td scope="col">Chave</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </thead>
-                    <tbody data-myProjects-table-body id="tabela-projetos">
+            <div class="container">
+                <ul class="nav nav-tabs nav-justified">
+                  <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#myProjects">Meus projetos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#medalhas">Medalhas</a>
+                  </li>
+                </ul>
+              </div>
 
-                    </tbody>
-                </table>
+            <div class="tab-content">
+                <div id="myProjects" class="container"><br>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <td scope="col">Titulo</td>
+                                <td scope="col">Descricao</td>
+                                <td scope="col">Empresa</td>
+                                <td scope="col">Chave</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody data-myProjects-table-body id="tabela-projetos">
+    
+                        </tbody>
+                    </table>
+                </div>
             </div>
+
+            <div id="medalhas" class="container tab-pane active2"><br></br>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"><a onclick="alert('Ola')">Materia</a></th>
+                      <th scope="col">ID Professor</th>
+                      <th scope="col">ID Aluno</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody id="tpjr2">
+          
+                  </tbody>
+                </table>
+              </div>
        
         <script src="js/jquery-2.3.3.min.js" type="text/javascript"></script>
          <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -47,3 +76,4 @@
     <script src="js/projetos.js"></script>
     </body>
 </html>
+

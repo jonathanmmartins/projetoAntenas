@@ -189,6 +189,20 @@ public class REST {
 		});
 	}
 
+	public void getMedalhas() { // Lista as medalhas
+		get("/medalhas", new Route() {
+			@Override
+			public Object handle(final Request request, final Response response) {
+				
+				FindIterable<Document> medalFound = model.getAllMedalhas();
+				 
+				return StreamSupport.stream(medalFound.spliterator(), false)
+			        .map(Document::toJson)
+			        .collect(Collectors.joining(", ", "[", "]"));
+			}
+		});
+	}
+
 	public void getEmpresarios() { // Lista os empresarios
 		get("/empresarios", new Route() {
 			@Override
