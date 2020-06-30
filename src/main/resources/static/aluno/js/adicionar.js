@@ -51,8 +51,8 @@ $(document).ready(function () {
 				var $tela = document.querySelector('#tpjr2'),
 					HTMLTemporario = $tela.innerHTML,
 					HTMLNovo = "<tr> <th>" + medal[index].nameMedal + "</th>"
-						+ "<th>" + medal[index].email_professor + "</th>" + "<th>"
-						+ medal[index].email_aluno + "</th>"
+						+ "<th>" + medal[index].nivel + "</th>" + "<th>"
+						+ medal[index].email_professor + "</th>"
 						+ "</tr>";
 				HTMLTemporario = HTMLTemporario + HTMLNovo;
 				$tela.innerHTML = HTMLTemporario;

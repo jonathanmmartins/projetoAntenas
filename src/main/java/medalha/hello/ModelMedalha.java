@@ -1,8 +1,5 @@
 package medalha.hello;
 
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
-
 import org.bson.Document;
 
 import com.mongodb.MongoClient;

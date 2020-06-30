@@ -3,6 +3,7 @@
 import static spark.Spark.*;
 import org.bson.Document;
 import cadi.hello.ModelCadi;
+import medalha.hello.ControllerMedalha;
 import medalha.hello.ModelMedalha;
 import professor.hello.ControllerProfessor;
 import professor.hello.ModelProfessor;
@@ -37,9 +38,12 @@ public class MainServer {
         initializeControllerProfessor();
         //initializeModelProfessor();
         initializeControllerAluno();
-        //modelAluno.addAluno(Document.parse("{'name':'Leticia', 'email':'leticia.carvalho11@fatec.sp.gov.br','senha':'123', 'ativo':true}"));
+        initializeControllerMedalha();
+        //modelAluno.addAluno(Document.parse("{'name':'teste', 'email':'teste.teste2@fatec.sp.gov.br','senha':'123', 'ativo':true}"));
+        //modelAluno.addAluno(Document.parse("{'name':'jonathan', 'email':'jonathan.teste2@fatec.sp.gov.br','senha':'123', 'ativo':true}"));
+        //modelAluno.addAluno(Document.parse("{'name':'Pedro', 'email':'Pedro.teste2@fatec.sp.gov.br','senha':'123', 'ativo':true}"));
+        //modelAluno.addAluno(Document.parse("{'name':'Gabriel', 'email':'Gabriel.teste2@fatec.sp.gov.br','senha':'123', 'ativo':true}"));
         //initializeModelMedalha();
-        modelMedal.addMedalha(Document.parse("{'nameMedal':'Eclipse', 'email_aluno':'leticia.carvalho11@fatec.sp.gov.br','email_professor':'Giuliano@fatec.sp.gov.br'}"));
 	}
     
 	public static void initializeModelMedalha() {
@@ -47,7 +51,12 @@ public class MainServer {
         //modelMedal.addMedalha(Document.parse("{'nameMedal':'Java', 'email_aluno':'leticia.carvalho11@fatec.sp.gov.br','email_professor':'Nanci@fatec.sp.gov.br'}"));
         //modelMedal.addMedalha(Document.parse("{'nameMedal':'C++', 'email_aluno':'leticia2.carvalho11@fatec.sp.gov.br','email_professor':'Nanci@fatec.sp.gov.br'}"));
         //modelMedal.addMedalha(Document.parse("{'nameMedal':'Python', 'id_aluno':'5e698a3fc9a6673f160bc300','id_professor':'5e698c51a90bba418ec9d9fc'}"));
-
+		
+	}
+	public static void initializeControllerMedalha() {
+    	ControllerMedalha controller = new ControllerMedalha(modelMedal);
+    	controller.addMedalhas();
+      	
 	}
 	
     public static void initializeControllerEmpresario() {
@@ -135,6 +144,7 @@ public class MainServer {
 	    controller.atribuirProjeto();
 	    controller.entregaProjeto();
 	    controller.ativarUsuario();
+	    controller.listAlunos();
 	    
 	    //validacao alunos
 	    controller.validaAluno();
